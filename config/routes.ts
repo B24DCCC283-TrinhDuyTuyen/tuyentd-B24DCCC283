@@ -37,15 +37,7 @@
 		icon: 'ArrowsAltOutlined',
 	},
 
-	// ========================================
-	// Trang Trò chơi Đoán Số
-	// ========================================
-	// Chức năng:
-	// - Sinh ra số ngẫu nhiên từ 1-100
-	// - Cho phép người chơi 10 lượt để đoán
-	// - Phản hồi: "quá thấp", "quá cao", "đúng", "hết lượt"
-	// - Lưu lịch sử dự đoán
-	// - Có nút "Chơi lại" để bắt đầu ván mới
+	//random number
 	{
 		path: '/random-number',
 		name: 'RandomNumber',
