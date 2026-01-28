@@ -45,6 +45,14 @@
 		icon: 'ArrowsAltOutlined',
 	},
 
+	// todo List
+	{
+		path: '/todo-list',
+		name: 'TodoList',
+		component: './TodoList',
+		icon: 'CheckCircleOutlined',
+	},
+
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
