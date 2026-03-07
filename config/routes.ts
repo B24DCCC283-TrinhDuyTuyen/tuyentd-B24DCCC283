@@ -1,4 +1,7 @@
-﻿export default [
+﻿import component from "@/locales/en-US/component";
+import path from "path";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -51,6 +54,14 @@
 		name: 'TodoList',
 		component: './TodoList',
 		icon: 'CheckCircleOutlined',
+	},
+
+	//Oẳn tù tì
+	{
+		path: '/oan-tu-ti',
+		name: 'OanTuTi',
+		component: './OanTuTi',
+		icon: 'ExperimentOutlined'
 	},
 
 	// DANH MUC HE THONG
