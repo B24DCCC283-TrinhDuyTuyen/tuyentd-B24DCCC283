@@ -64,6 +64,15 @@ export default [
 		icon: 'ExperimentOutlined'
 	},
 
+	// Ngân hàng câu hỏi
+	{
+		path: '/ngan-hang-cau-hoi',
+		name: 'NganHangCauHoi',
+		component: './NganHangCauHoi',
+		icon: 'DatabaseOutlined'
+	},
+
+
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',

@@ -1,7 +1,7 @@
 import { useModel } from "umi";
-import GameChoiceButtons from "./components/GameChoiceButtons";
-import GameHistory from "./components/GameHistory";
-import GameResultDisplay from "./components/GameResultDisplay";
+import GameChoiceButtons from "./components/GameChoicebutton/GameChoiceButtons";
+import GameHistory from "./components/GameHistory/GameHistory";
+import GameResultDisplay from "./components/GameResultDisplay/GameResultDisplay";
 
 export default function Page() {
     const {
