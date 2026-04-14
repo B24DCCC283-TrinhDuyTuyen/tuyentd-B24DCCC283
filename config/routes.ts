@@ -1,4 +1,5 @@
 ﻿import component from "@/locales/en-US/component";
+import { icons } from "antd/lib/image/PreviewGroup";
 import path from "path";
 
 export default [
@@ -67,10 +68,17 @@ export default [
 	// Ngân hàng câu hỏi
 	{
 		path: '/ngan-hang-cau-hoi',
-		name: 'NganHangCauHoi',
+		name: 'Ngân Hàng Câu Hỏi',
 		component: './NganHangCauHoi',
 		icon: 'DatabaseOutlined'
 	},
+	// Quản lí lịch tập luyện cá nhân
+	// {
+	// 	path: '/quan-li-lich-tap-luyen-ca-nhan',
+	// 	name: 'Quản Lí Lịch Tập Luyện Cá Nhân',
+	// 	component: './QuanLiLichTapLuyenCaNhan',
+	// 	icon: 'DatabaseOutlined'
+	// },
 
 
 	// DANH MUC HE THONG
