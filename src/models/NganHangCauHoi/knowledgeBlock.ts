@@ -1,23 +1,57 @@
 import { useState } from "react";
-import { KnowledgeBlock, getKnowledgeBlocks, addKnowledgeBlock } from "@/services/NganHangCauHoi/knowledgeBlock";
+import { KnowledgeBlock, getKnowledgeBlocks, addKnowledgeBlock, updateKnowledgeBlock, deleteKnowledgeBlock } from "@/services/NganHangCauHoi/knowledgeBlock";
 
 export default () => {
 
     const [blocks, setBlocks] = useState<KnowledgeBlock[]>([])
+    const [loading, setLoading] = useState(false)
 
     const fetchBlocks = async () => {
-        const data = await getKnowledgeBlocks()
-        setBlocks(data)
+        setLoading(true)
+        try {
+            const data = await getKnowledgeBlocks()
+            setBlocks(data)
+        } finally {
+            setLoading(false)
+        }
     }
 
     const createBlock = async (block: KnowledgeBlock) => {
-        await addKnowledgeBlock(block)
-        await fetchBlocks()
+        setLoading(true)
+        try {
+            await addKnowledgeBlock(block)
+            await fetchBlocks()
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const updateBlock = async (block: KnowledgeBlock) => {
+        setLoading(true)
+        try {
+            await updateKnowledgeBlock(block)
+            await fetchBlocks()
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const removeBlock = async (id: string) => {
+        setLoading(true)
+        try {
+            await deleteKnowledgeBlock(id)
+            await fetchBlocks()
+        } finally {
+            setLoading(false)
+        }
     }
 
     return {
         blocks,
+        loading,
         fetchBlocks,
-        createBlock
+        createBlock,
+        updateBlock,
+        removeBlock
     }
 }

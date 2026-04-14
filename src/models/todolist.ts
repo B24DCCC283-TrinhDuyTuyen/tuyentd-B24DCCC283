@@ -12,9 +12,6 @@ export default () => {
     // Danh sách todo (state chính)
     const [todos, setTodos] = useState<TodoItem[]>([]);
 
-    // Điều khiển việc mở / đóng modal
-    const [visible, setVisible] = useState<boolean>(false);
-
     // Phân biệt đang thêm mới hay chỉnh sửa
     const [isEdit, setIsEdit] = useState<boolean>(false);
 
@@ -55,8 +52,6 @@ export default () => {
 
     return {
         todos,
-        visible,
-        setVisible,
         isEdit,
         setIsEdit,
         row,
