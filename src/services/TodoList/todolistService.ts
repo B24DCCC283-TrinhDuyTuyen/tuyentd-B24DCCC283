@@ -9,7 +9,15 @@ export interface TodoItem {
     createdAt: number;
     updatedAt: number;
 }
-
+export const getTodos = (): TodoItem[] => {
+    try {
+        const data = localStorage.getItem('todolist_data');
+        return data ? JSON.parse(data) : [];
+    } catch (e) {
+        message.error('Lỗi khi đọc dữ liệu');
+        return [];
+    }
+};
 // Lưu danh sách todo vào localStorage
 export const saveTodos = (todos: TodoItem[]): boolean => {
     try {
@@ -23,7 +31,7 @@ export const saveTodos = (todos: TodoItem[]): boolean => {
 
 // Tạo todo mới
 export const createTodo = (title: string, description?: string): TodoItem => ({
-    id: Date.now().toString(),
+    id: crypto.randomUUID(),
     title,
     description,
     status: 'pending',

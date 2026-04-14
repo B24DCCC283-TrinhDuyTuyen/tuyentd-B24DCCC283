@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
+    getTodos,
     saveTodos,
     createTodo,
     updateTodoItem,
@@ -9,6 +10,7 @@ import {
 
 //quản lý state dùng chung cho TodoList
 export default () => {
+
     // Danh sách todo (state chính)
     const [todos, setTodos] = useState<TodoItem[]>([]);
 
@@ -17,16 +19,11 @@ export default () => {
 
     // Lưu todo đang được chọn để sửa
     const [row, setRow] = useState<TodoItem | undefined>();
+    useEffect(() => {
+        const data = getTodos()
+        setTodos(data)
+    }, [])
 
-    // Đọc danh sách todo từ localStorage
-    const getTodos = () => {
-        const dataLocal = localStorage.getItem('todolist_data');
-        if (!dataLocal) {
-            setTodos([]);
-            return;
-        }
-        setTodos(JSON.parse(dataLocal));
-    };
 
     // Thêm todo mới
     const addTodo = (title: string, description?: string) => {
@@ -56,7 +53,6 @@ export default () => {
         setIsEdit,
         row,
         setRow,
-        getTodos,
         addTodo,
         updateTodo,
         deleteTodo,

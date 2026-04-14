@@ -6,12 +6,8 @@ import TodoForm from './components/TodoForm';
 
 // Page chính của TodoList
 const TodoPage = () => {
-    const { todos, getTodos, } = useModel('todolist');
+    const { todos } = useModel('todolist');
 
-    // Load todo khi vào trang
-    useEffect(() => {
-        getTodos();
-    }, []);
 
     return (
         <div>
