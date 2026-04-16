@@ -72,6 +72,14 @@ export default [
 		component: './NganHangCauHoi',
 		icon: 'DatabaseOutlined'
 	},
+
+	// Profile Card Responsive
+	{
+		path: 'profile-card-responsive',
+		name: 'Profile Card Responsive',
+		component: './CardResponsive',
+		icon: 'DatabaseOutlined',
+	},
 	// Quản lí lịch tập luyện cá nhân
 	// {
 	// 	path: '/quan-li-lich-tap-luyen-ca-nhan',
