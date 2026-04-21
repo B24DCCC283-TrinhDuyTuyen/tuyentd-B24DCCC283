@@ -1,28 +1,33 @@
-import WorkoutForm from "./componenets/WorkoutForm";
-import WorkoutTable from "./componenets/WorkoutTable";
-import WorkoutFilter from "./componenets/WorkoutFilter";
-import WorkoutStats from "./componenets/WorkoutStats";
-
 import React from 'react'
-
+import WorkoutFilter from './componenets/WorkoutFilter'
+import WorkoutForm from './componenets/WorkoutForm'
+import WorkoutStats from './componenets/WorkoutStats'
+import WorkoutTable from './componenets/WorkoutTable'
+import './index.css'
 const WorkoutPage = () => {
     return (
-        <div style={{ padding: 24 }}>
+        <div className='page'>
             <h2>Workout Planner</h2>
+
             {/* Stats */}
-            <WorkoutStats />
+            <div className='stats'>
+                <WorkoutStats />
+            </div>
 
             {/* Filter */}
-            <WorkoutFilter />
+            <div className='filter'>
+                <WorkoutFilter />
+            </div>
 
             {/* Layout */}
-            <div style={{ display: 'flex', gap: 24 }}>
+            <div className='container'>
                 {/* Form */}
-                <div style={{ width: '30%' }} />
-                <WorkoutForm />
+                <div className='form'>
+                    <WorkoutForm />
+                </div>
 
                 {/* Table */}
-                <div style={{ flex: 1 }}>
+                <div className='table'>
                     <WorkoutTable />
                 </div>
             </div>
