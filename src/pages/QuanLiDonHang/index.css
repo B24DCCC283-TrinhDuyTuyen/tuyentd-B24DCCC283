@@ -1,0 +1,81 @@
+/* Layout cơ bản cho Mobile (Mặc định) */
+.page {
+    padding: 16px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Xếp dọc trên mobile */
+    gap: 16px;
+}
+
+.form {
+    width: 100%;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.table {
+    width: 100%;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tablet (Màn hình >= 768px) */
+@media (min-width: 768px) {
+    .filter {
+        flex-direction: row;
+        /* Chuyển sang hàng ngang */
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        /* Chia 2 cột */
+    }
+}
+
+/* Laptop/Desktop (Màn hình >= 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .form {
+        width: 300px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 20px;
+    }
+
+    .table {
+        flex: 1;
+    }
+
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

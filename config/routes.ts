@@ -88,7 +88,13 @@ export default [
 		icon: 'DatabaseOutlined'
 	},
 
-
+	// Quản lý đơn hàng
+	{
+		path: '/quan-li-don-hang',
+		name: 'Quản Lý Đơn Hàng',
+		component: './QuanLiDonHang',
+		icon: 'ShoppingCartOutlined'
+	},
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
